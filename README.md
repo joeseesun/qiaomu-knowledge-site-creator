@@ -29,6 +29,9 @@
 
 ### 前置要求
 
+- [ ] Claude Code 或其他支持 Agent Skills 的客户端
+- [ ] Node.js（本地预览与构建）
+
 - Claude Code CLI
 - Node.js 18+
 - Vercel CLI（可选，用于部署）
@@ -58,7 +61,7 @@ cp -r knowledge-site-creator ~/.claude/skills/
 cp -r /path/to/knowledge-site-creator ~/.claude/skills/
 ```
 
-### 使用
+### 你可以直接这样说
 
 在 Claude Code 中直接说：
 
@@ -162,6 +165,18 @@ knowledge-site-creator/
 
 编辑生成的 `js/wordData.js`，按照固定格式添加知识点。
 
+## 验证 / Verification
+
+```bash
+python3 ~/.agents/skills/qiaomu-meta-skill/scripts/validate_skill.py <skill-dir>
+```
+
+## Troubleshooting
+
+- 页面空白：先在浏览器控制台看报错，多为数据文件路径或 JSON 语法错误。
+- 进度丢失：浏览器隐私模式或清除站点数据会清空 LocalStorage。
+- 首页演示不动：系统开启了“减少动态效果”或演示区不在视口内，这是预期行为。
+
 ## 🤝 贡献
 
 欢迎贡献代码、报告 Bug、提出建议！
@@ -172,7 +187,27 @@ knowledge-site-creator/
 4. 推送到分支 (`git push origin feature/AmazingFeature`)
 5. 提交 Pull Request
 
-## 📄 License
+<!-- qiaomu-profile:start -->
+## 关于向阳乔木
+
+向阳乔木（乔向阳 / Joe）是一位实践型 AI 产品与内容创作者，长期把前沿 AI 变化转译成可复用的工作流、产品判断、AI 编程实践、AI 搜索实践和 GEO/AI 营销方法。
+
+- 个人网站: https://qiaomu.ai
+- 博客: https://blog.qiaomu.ai
+- X: https://x.com/vista8
+- GitHub: https://github.com/joeseesun/
+- 微信公众号: 向阳乔木推荐看
+
+### 支持与关注
+
+| 打赏支持 | 微信公众号 |
+|---|---|
+| <img src="assets/qiaomu-profile/qiaomu_reward_qr.png" alt="向阳乔木打赏二维码" width="180" /> | <img src="assets/qiaomu-profile/qiaomu_wechat_public_account_qr.jpg" alt="向阳乔木推荐看公众号二维码" width="180" /> |
+| 感谢支持乔木持续分享 AI 实践 | 扫码关注「向阳乔木推荐看」 |
+
+<!-- qiaomu-profile:end -->
+
+## License
 
 本项目采用 MIT 协议开源 - 详见 [LICENSE](LICENSE) 文件
 

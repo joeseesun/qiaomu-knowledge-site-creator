@@ -1,0 +1,52 @@
+{
+  "recommended_threshold": 0.34,
+  "description_required_concepts": [
+    "site"
+  ],
+  "positive_concepts": {
+    "site": [
+      "学习网站",
+      "知识网站",
+      "网站",
+      "learning site"
+    ],
+    "learn": [
+      "学习",
+      "闪卡",
+      "测验",
+      "知识",
+      "术语"
+    ]
+  },
+  "negative_patterns": [
+    "营销落地页",
+    "数据报告",
+    "信息卡"
+  ],
+  "should_trigger": [
+    {
+      "text": "做一个大模型术语学习网站",
+      "family": "terms"
+    },
+    {
+      "text": "生成一个化学元素的知识学习网站",
+      "family": "chem"
+    }
+  ],
+  "should_not_trigger": [
+    {
+      "text": "给产品做一个营销落地页",
+      "family": "landing"
+    },
+    {
+      "text": "把这段话做成信息卡",
+      "family": "card"
+    }
+  ],
+  "near_neighbor": [
+    {
+      "text": "把 CSV 做成数据报告",
+      "family": "report"
+    }
+  ]
+}
