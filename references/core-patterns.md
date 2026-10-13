@@ -544,9 +544,19 @@ function updateDemo() {
   currentIndex = (currentIndex + 1) % examples.length;
 }
 
-// 每4秒切换
-setInterval(updateDemo, 4000);
+// 每4秒切换；离开视口、悬停/聚焦、减少动态效果时暂停
+const demo = document.getElementById('demoWord').closest('section') || document.body;
+const still = matchMedia('(prefers-reduced-motion: reduce)');
+let visible = true, held = false;
+new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; }).observe(demo);
+demo.addEventListener('mouseenter', () => { held = true; });
+demo.addEventListener('mouseleave', () => { held = false; });
+demo.addEventListener('focusin', () => { held = true; });
+demo.addEventListener('focusout', () => { held = false; });
+setInterval(() => { if (visible && !held && !still.matches) updateDemo(); }, 4000);
 ```
+
+演示区的读数/文字变化放在 `aria-live="polite"` 容器里，读屏用户也能听到。
 
 ## 10. 关键原则
 
@@ -555,3 +565,5 @@ setInterval(updateDemo, 4000);
 3. **键盘友好**：支持键盘快捷键（←→空格）
 4. **响应式设计**：适配移动端和桌面端
 5. **极简交互**：清晰的反馈，最少的操作步骤
+6. **演示有礼貌**：自动轮播和动画离开视口就停、悬停或聚焦时暂停、`prefers-reduced-motion` 下保持静止但仍可手动操作
+7. **机制用实物讲**：主题里有“某个东西怎么运作”的核心概念（如缓存、协议、引擎、化学反应过程）时，可为该概念页生成一张实物机制图——调用 `anatomy` 产出独立 HTML 图，作为概念页的嵌入插图；每张图只讲一个机制，读数与正文数字来自同一数据

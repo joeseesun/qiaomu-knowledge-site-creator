@@ -1,0 +1,25 @@
+{
+  "name": "knowledge-site-creator",
+  "version": "1.0.0",
+  "owner": "向阳乔木",
+  "updated_at": "2026-10-13",
+  "status": "active",
+  "maturity_tier": "scaffold",
+  "lifecycle_stage": "public",
+  "target_platforms": [
+    "claude",
+    "openai",
+    "generic",
+    "agent-skills-compatible"
+  ],
+  "permissions": {
+    "network": "deploy only when user asks",
+    "file_write": "user-approved output directory",
+    "subprocess": "node build tools"
+  },
+  "release_gates": [
+    "package_validation",
+    "trigger_eval",
+    "manual_visual_open"
+  ]
+}

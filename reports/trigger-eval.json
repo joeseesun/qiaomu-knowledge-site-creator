@@ -1,0 +1,81 @@
+{
+  "ok": true,
+  "threshold": 0.34,
+  "description_concepts": [
+    "learn",
+    "site"
+  ],
+  "missing_description_concepts": [],
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "false_positive": 0,
+    "false_negative": 0,
+    "pass_rate": 1.0
+  },
+  "failures": [],
+  "results": {
+    "should_trigger": [
+      {
+        "prompt": "做一个大模型术语学习网站",
+        "family": "terms",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "learn",
+          "site"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "生成一个化学元素的知识学习网站",
+        "family": "chem",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "learn",
+          "site"
+        ],
+        "negative_pattern": null
+      }
+    ],
+    "should_not_trigger": [
+      {
+        "prompt": "给产品做一个营销落地页",
+        "family": "landing",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": "营销落地页"
+      },
+      {
+        "prompt": "把这段话做成信息卡",
+        "family": "card",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": "信息卡"
+      }
+    ],
+    "near_neighbor": [
+      {
+        "prompt": "把 CSV 做成数据报告",
+        "family": "report",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": "数据报告"
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+interface:
+  display_name: "Knowledge Site Creator"
+  short_description: "一句话生成任何领域的知识学习网站"
+  default_prompt: "Use $knowledge-site-creator to build a learning website for my topic with flashcards, progressive learning, quizzes, index and progress tracking."
+  examples:
+    - "做一个大模型术语学习网站"
+    - "生成一个化学元素的闪卡学习站"
+compatibility:
+  canonical_format: "agent-skills"
+  adapter_targets: ["claude", "openai", "generic", "agent-skills-compatible"]
+  permissions:
+    network: "deploy only when the user asks"
+    file_write: "generated site directory"
+    subprocess: "local Node build tools"

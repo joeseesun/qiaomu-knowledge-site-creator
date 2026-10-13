@@ -1,0 +1,84 @@
+{
+  "schema_version": "2.0.0-qiaomu-lite",
+  "generated_at": "2026-10-13",
+  "package": {
+    "name": "knowledge-site-creator",
+    "version": "1.0.0",
+    "owner": "向阳乔木",
+    "maturity_tier": "scaffold",
+    "lifecycle_stage": "public",
+    "upstream_inspiration": null,
+    "upstream_sync": {}
+  },
+  "intent": {
+    "description": "一句话生成任何领域的知识学习网站。AI自动理解主题、创作内容、生成页面、部署上线。适用于任何需要系统学习的知识领域：进化心理学、大模型术语、化学元素、历史事件等。",
+    "job_to_be_done": "一句话生成任何领域的知识学习网站。AI自动理解主题、创作内容、生成页面、部署上线。适用于任何需要系统学习的知识领域：进化心理学、大模型术语、化学元素、历史事件等。",
+    "target_users": [
+      "Qiaomu operator"
+    ],
+    "inputs": [],
+    "outputs": [],
+    "exclusions": [],
+    "qiaomu_defaults": {}
+  },
+  "triggers": {
+    "should_trigger": [
+      "做一个大模型术语学习网站",
+      "生成一个化学元素的知识学习网站"
+    ],
+    "should_not_trigger": [
+      "给产品做一个营销落地页",
+      "把这段话做成信息卡"
+    ],
+    "near_neighbor": [
+      "把 CSV 做成数据报告"
+    ]
+  },
+  "workflow": {
+    "router_rules": [],
+    "compact_workflow": [],
+    "gate_ladder": [],
+    "output_contract": []
+  },
+  "resources": {
+    "references": [
+      "references/code-quality.md",
+      "references/core-patterns.md",
+      "references/design-system.md",
+      "references/pwa-setup.md",
+      "references/seo-best-practices.md"
+    ],
+    "scripts": [],
+    "evals": [
+      "evals/trigger_cases.json"
+    ],
+    "reports": [
+      "reports/trigger-eval.json"
+    ]
+  },
+  "portability": {
+    "canonical_format": "agent-skills",
+    "adapter_targets": [
+      "claude",
+      "openai",
+      "generic",
+      "agent-skills-compatible"
+    ],
+    "activation": {},
+    "execution": {},
+    "trust": {},
+    "permissions": {
+      "network": "deploy only when the user asks",
+      "file_write": "generated site directory",
+      "subprocess": "local Node build tools"
+    },
+    "degradation": {}
+  },
+  "gates": {},
+  "evidence_boundary": {
+    "generated_reports_are_evidence": true,
+    "planned_work_is_evidence": false,
+    "missing_external_or_human_evidence_label": "missing evidence",
+    "public_claim_policy": "claim only what local validation, install proof, human review, or provider-backed evidence actually supports"
+  }
+}
